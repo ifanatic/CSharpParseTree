@@ -8,23 +8,59 @@ namespace CSharpParseTreeLib
 {
     public class TreeElementCreator
     {
-        public static ITreeElement CreateFromObject(string name, Object someObject)
+        private static bool CanAndNeedProcessObject(string name, Object someObject)
         {
             if (someObject == null)
+            {
+                return false;
+            }
+
+            Type objectType = someObject.GetType();
+
+            if (objectType.Name.Equals("CompilerContext"))
+            {
+                return false;
+            }
+
+            if (objectType.Namespace.StartsWith("System.Reflection"))
+            {
+                return false;
+            }
+
+            /*if (objectType.Namespace.StartsWith("System.") &&
+                !objectType.Namespace.StartsWith("System.Collections") &&
+                (objectType.Namespace.Length > 7))
+            {
+                return false;
+            }*/
+
+            if (name.Equals("TypeBuilder") || name.Equals("GenericTypeBuilder"))
+            {
+                return false;
+            }
+
+            return true;
+        }
+        
+        public static ITreeElement CreateFromObject(string name, Object someObject)
+        {
+            if (!CanAndNeedProcessObject(name, someObject))
             {
                 return null;
             }
             
             Type objectType = someObject.GetType();
-
-            if (objectType.Name.Equals("CompilerContext"))
+                
+            if (objectType.ToString().StartsWith("Mono.CSharp"))
             {
-                return null;
-            }
-    
-            if (objectType.IsClass && objectType.ToString().StartsWith("Mono.CSharp"))
-            {
-                return new MCSElement(name, someObject);
+                if (objectType.IsClass)
+                {
+                    return new MCSClassElement(name, someObject);
+                }
+                else
+                {
+                    return new MCSOtherElement(name, someObject);
+                }
             }
 
             if (someObject is IDictionary)
@@ -36,17 +72,8 @@ namespace CSharpParseTreeLib
             {
                 return new EnumerableElement(name, someObject);
             }
-
-            //if (objectType.ToString().StartsWith("System."))
-            //{
-                return new OtherElement(name, someObject);
-            //}
-            //else
-            //{
-            //    return null;
-            //}
-
-            //return new SimpleElement(name, someObject);
+      
+            return new SystemElement(name, someObject);
         }
     }
 }

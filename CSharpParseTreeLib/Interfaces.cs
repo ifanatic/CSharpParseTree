@@ -5,10 +5,11 @@ namespace CSharpParseTreeLib
 {
     public interface IVisitor
     {
-        void VisitMCSElement(MCSElement element);
+        void VisitMCSClassElement(MCSClassElement element);
+        void VisitMCSOtherElement(MCSOtherElement element);
         void VisitEnumerableElement(EnumerableElement element);
         void VisitDictionaryElement(DictionaryElement element);
-        void VisitOtherElement(OtherElement element);
+        void VisitSystemElement(SystemElement element);
     }
   
     public interface ITreeElement
@@ -26,11 +27,19 @@ namespace CSharpParseTreeLib
 
     public interface IFormatBuilder
     {
-        void WriteStartElement(string name);
-        void WriteEndElement(string name);
-        void WriteStartArray(string arrayName);
-        void WriteEndArray(string arrayName);
-        void WriteSimpleElement(string name, object value);
-        
+        void WriteStartEnumerable(string tag);
+        void WriteEndEnumerable(string tag);
+        void WriteStartDictionary(string tag);
+        void WriteEndDictionary(string tag);
+        void WriteStartMCSClass(string tag, string name);
+        void WriteEndMCSClass(string tag);
+        void WriteSingleElement(string tag, string elementName, string value);
+        void WriteStartDocument();
+        void WriteEndDocument();
+    }
+
+    public interface IStringProcessor
+    {
+        void Process(ref string someString);
     }
 }

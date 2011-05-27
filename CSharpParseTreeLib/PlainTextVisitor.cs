@@ -26,17 +26,22 @@ namespace CSharpParseTreeLib
             _fileStream.Close();
         }
 
-        public void VisitMCSElement(MCSElement element)
+        public void VisitMCSClassElement(MCSClassElement element)
         {
-            if (_visited.ContainsKey(element.ValueObject))
+            try
+            {
+                if (_visited.ContainsKey(element.ValueObject))
+                {
+                    return;
+                }
+            }
+            catch
             {
                 return;
             }
 
+
             _visited.Add(element.ValueObject, true);
-
-
-            if (_visited.ContainsKey(element.ValueObject))
 
             depth++;
             IEnumerable<ITreeElement> childrens = element.GetChildrens();
@@ -45,9 +50,8 @@ namespace CSharpParseTreeLib
             {
                 _writer.Write("  ");
             }
-            string className = element.ValueObject.GetType().Name;
-
-            _writer.WriteLine("Class: {0}, Name: {1}", className, element.Name);
+            
+            _writer.WriteLine("Class: {0}, Name: {1}", element.TypeName, element.Name);
 
             foreach (var child in childrens)
             {
@@ -107,7 +111,7 @@ namespace CSharpParseTreeLib
             depth--;
         }
 
-        public void VisitOtherElement(OtherElement element)
+        public void VisitSystemElement(SystemElement element)
         {
             if (_visited.ContainsKey(element.ValueObject))
             {
@@ -121,10 +125,34 @@ namespace CSharpParseTreeLib
             {
                 _writer.Write("  ");
             }
+            
+            _writer.WriteLine("Class: {0}, Name: {1}, Value: {2}", element.TypeName, element.Name, element.ValueObject.ToString());
+            depth--;
+        }
 
-            string className = element.ValueObject.GetType().Name;
+        public void VisitMCSOtherElement(MCSOtherElement element)
+        {
+            if (_visited.ContainsKey(element.ValueObject))
+            {
+                return;
+            }
 
-            _writer.WriteLine("Class: {0}, Name: {1}, Value: {2}", className, element.Name, element.ValueObject.ToString());
+            _visited.Add(element.ValueObject, true);
+
+            depth++;
+            for (int i = 0; i < depth; ++i)
+            {
+                _writer.Write("  ");
+            }
+
+            string valueString = element.ValueObject.ToString();
+
+            if (element.TypeName.Equals("Location"))
+            {
+                valueString = valueString.Replace(@"C:\Users\fanatic\documents\visual studio 2010\Projects\", "");
+            }
+
+            _writer.WriteLine("Class: {0}, Name: {1}, Value: {2}", element.TypeName, element.Name, valueString);
             depth--;
         }
     }

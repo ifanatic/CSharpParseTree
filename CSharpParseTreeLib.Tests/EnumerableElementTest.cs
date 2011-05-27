@@ -57,7 +57,7 @@ namespace CSharpParseTreeLib.Tests
             IEnumerable<ITreeElement> childrens = enumElement.GetChildrens();
 
             Assert.AreEqual((childrens.First() as BaseElement).ValueObject, 10);
-            Assert.IsTrue(childrens.Last() is MCSElement);
+            Assert.IsTrue(childrens.Last() is MCSClassElement);
         }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace CSharpParseTreeLib
 {
-    public class OtherElement : BaseElement
+    public class SystemElement : BaseElement
     {
-        public OtherElement(String name, Object o)
+        public SystemElement(String name, Object o)
             : base(name, o)
         {
         }
@@ -19,7 +19,7 @@ namespace CSharpParseTreeLib
 
         public override void Visit(IVisitor visitor)
         {
-            visitor.VisitOtherElement(this);
+            visitor.VisitSystemElement(this);
         }
     }
 }

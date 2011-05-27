@@ -16,7 +16,7 @@ namespace CSharpParseTreeLib.Tests
         public void TestGetChildrensCountWithSystemNamespace()
         {
             Testdata.ClassB someClass = new Testdata.ClassB();
-            MCSElement simpleElement = new MCSElement("some_name", someClass);
+            MCSClassElement simpleElement = new MCSClassElement("some_name", someClass);
             IEnumerable<ITreeElement> childrens = simpleElement.GetChildrens();
 
             Assert.AreEqual(3, childrens.Count());
@@ -26,7 +26,7 @@ namespace CSharpParseTreeLib.Tests
         public void TestGetChildrensCountWithMonoNamespace()
         {
             Mono.CSharp.ClassB someClass = new Mono.CSharp.ClassB();
-            MCSElement simpleElement = new MCSElement("someClass", someClass);
+            MCSClassElement simpleElement = new MCSClassElement("someClass", someClass);
             IEnumerable<ITreeElement> childrens = simpleElement.GetChildrens();
 
             Assert.AreEqual(3, childrens.Count());
@@ -36,7 +36,7 @@ namespace CSharpParseTreeLib.Tests
         public void TestGetChildrensGetElementsNames()
         {
             Mono.CSharp.ClassB someClass = new Mono.CSharp.ClassB();
-            MCSElement simpleElement = new MCSElement("someClass", someClass);
+            MCSClassElement simpleElement = new MCSClassElement("someClass", someClass);
 
             IEnumerable<ITreeElement> childrens = simpleElement.GetChildrens();
 
@@ -48,12 +48,12 @@ namespace CSharpParseTreeLib.Tests
         public void TestGetChildrensGetElementsTypes()
         {
             Mono.CSharp.ClassB someClass = new Mono.CSharp.ClassB();
-            MCSElement simpleElement = new MCSElement("someClass", someClass);
+            MCSClassElement simpleElement = new MCSClassElement("someClass", someClass);
 
             IEnumerable<ITreeElement> childrens = simpleElement.GetChildrens();
 
-            Assert.IsTrue(childrens.First() is OtherElement);
-            Assert.IsTrue(childrens.Last() is MCSElement);
+            Assert.IsTrue(childrens.First() is SystemElement);
+            Assert.IsTrue(childrens.Last() is MCSClassElement);
         }
     }
 }

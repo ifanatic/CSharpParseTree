@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace CSharpParseTreeLib
 {
@@ -15,6 +16,16 @@ namespace CSharpParseTreeLib
         {
             _name = name;
             _object = o;
+
+            if (o == null)
+            {
+                TypeName = string.Empty;
+            }
+            else
+            {
+                TypeName = o.GetType().Name;
+                TypeNamespace = o.GetType().Namespace;
+            }
         }
 
         public Object ValueObject
@@ -46,6 +57,18 @@ namespace CSharpParseTreeLib
             {
                 _name = value;
             }
+        }
+
+        public string TypeName
+        {
+            get;
+            protected set;
+        }
+
+        public string TypeNamespace
+        {
+            get;
+            protected set;
         }
     }
 }

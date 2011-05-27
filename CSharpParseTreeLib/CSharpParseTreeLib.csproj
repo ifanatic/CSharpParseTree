@@ -47,18 +47,22 @@
     <Compile Include="BadElementTypeException.cs" />
     <Compile Include="BaseElement.cs" />
     <Compile Include="DictionaryElement.cs" />
+    <Compile Include="DbCHelper.cs" />
     <Compile Include="EmptyReportPrinter.cs" />
     <Compile Include="EnumerableElement.cs" />
+    <Compile Include="FormatTextVisitor.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="MCSCompiler.cs" />
+    <Compile Include="MCSOtherElement.cs" />
     <Compile Include="PlainTextVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionUtils.cs" />
-    <Compile Include="MCSElement.cs" />
+    <Compile Include="MCSClassElement.cs" />
     <Compile Include="MCSElementVisitor.cs" />
     <Compile Include="StreamReportPrinter.cs" />
-    <Compile Include="OtherElement.cs" />
+    <Compile Include="SystemElement.cs" />
     <Compile Include="TreeElementCreator.cs" />
+    <Compile Include="XMLFormatBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSharpParseTree\CSharpParseTree.csproj">

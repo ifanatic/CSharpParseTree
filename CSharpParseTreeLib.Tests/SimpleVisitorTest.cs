@@ -17,10 +17,10 @@ namespace CSharpParseTreeLib.Tests
             MCSElementVisitor sv = new MCSElementVisitor();
             Mono.CSharp.ClassB someClass = new Mono.CSharp.ClassB();
 
-            MCSElement se = new MCSElement("name", someClass);
+            MCSClassElement se = new MCSClassElement("name", someClass);
             se.Visit(sv);
 
-            Assert.AreEqual(2, sv.SimpleElementsCount);
+            Assert.AreEqual(2, sv.MCSCLassElementsCount);
         }
 
         [TestMethod]
@@ -29,7 +29,7 @@ namespace CSharpParseTreeLib.Tests
             MCSElementVisitor sv = new MCSElementVisitor();
             Mono.CSharp.ClassB someClass = new Mono.CSharp.ClassB();
 
-            MCSElement se = new MCSElement("name", someClass);
+            MCSClassElement se = new MCSClassElement("name", someClass);
             se.Visit(sv);
 
             Assert.AreEqual(6, sv.SystemElementsCount);
@@ -41,7 +41,7 @@ namespace CSharpParseTreeLib.Tests
             MCSElementVisitor sv = new MCSElementVisitor();
             Mono.CSharp.ClassB someClass = new Mono.CSharp.ClassB();
 
-            MCSElement se = new MCSElement("name", someClass);
+            MCSClassElement se = new MCSClassElement("name", someClass);
             se.Visit(sv);
 
             Assert.AreEqual(0, sv.DictionaryElementsCount);
@@ -53,7 +53,7 @@ namespace CSharpParseTreeLib.Tests
             MCSElementVisitor sv = new MCSElementVisitor();
             Mono.CSharp.ClassB someClass = new Mono.CSharp.ClassB();
 
-            MCSElement se = new MCSElement("name", someClass);
+            MCSClassElement se = new MCSClassElement("name", someClass);
             se.Visit(sv);
 
             Assert.AreEqual(1, sv.EnumerableElementsCount);

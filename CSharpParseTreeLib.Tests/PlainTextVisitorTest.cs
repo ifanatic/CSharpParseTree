@@ -14,7 +14,7 @@ namespace CSharpParseTreeLib.Tests
         {
             PlainTextVisitor ptv = new PlainTextVisitor("C:\\ptv_output.txt");
             Mono.CSharp.ClassB classB = new Mono.CSharp.ClassB();
-            MCSElement se = new MCSElement("root", classB);
+            MCSClassElement se = new MCSClassElement("root", classB);
             se.Visit(ptv);
             ptv.Close();
         }
@@ -31,7 +31,7 @@ namespace CSharpParseTreeLib.Tests
             MCSCompiler compiler = new MCSCompiler(_dmcsAssemblyFullPath);
             Assert.IsTrue(compiler.Compile(_pathToTests + @"\Testdata\FileWithValidSouceCode.cs"));
 
-            MCSElement se = new MCSElement("root", compiler.TreeRoot);
+            MCSClassElement se = new MCSClassElement("root", compiler.TreeRoot);
             se.Visit(ptv);
             ptv.Close();
         }
@@ -41,7 +41,7 @@ namespace CSharpParseTreeLib.Tests
         {
             PlainTextVisitor ptv = new PlainTextVisitor("C:\\ptv_output2.txt");
             Mono.CSharp.MemberName mn = new Mono.CSharp.MemberName("SomeName", new Mono.CSharp.Location(10, 10));
-            MCSElement se = new MCSElement("mn", mn);
+            MCSClassElement se = new MCSClassElement("mn", mn);
             se.Visit(ptv);
             ptv.Close();
         }

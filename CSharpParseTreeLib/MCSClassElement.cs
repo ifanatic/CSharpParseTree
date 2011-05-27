@@ -6,9 +6,9 @@ using System.Reflection;
 
 namespace CSharpParseTreeLib
 {
-    public class MCSElement : BaseElement
+    public class MCSClassElement : BaseElement
     {
-        public MCSElement(String name, Object value)
+        public MCSClassElement(String name, Object value)
             : base(name, value)
         {
 
@@ -29,8 +29,10 @@ namespace CSharpParseTreeLib
 
             foreach (Type type in baseTypes)
             {
-                foreach (FieldInfo fi in type.GetFields(BindingFlags.Instance |
-                    BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                FieldInfo[] fields = type.GetFields(BindingFlags.Instance |
+                    BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+                
+                foreach (FieldInfo fi in fields)
                 {
                     if (shown.ContainsKey(fi.Name))
                     {
@@ -51,7 +53,7 @@ namespace CSharpParseTreeLib
 
         public override void Visit(IVisitor visitor)
         {
-            visitor.VisitMCSElement(this);
+            visitor.VisitMCSClassElement(this);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace CSharpParseTreeLib.Tests
             ITreeElement treeElement = TreeElementCreator.CreateFromObject("someClassName", someClass);
 
             Assert.IsNotNull(treeElement);
-            Assert.IsTrue(treeElement is MCSElement);
+            Assert.IsTrue(treeElement is MCSClassElement);
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace CSharpParseTreeLib.Tests
             ITreeElement treeElement = TreeElementCreator.CreateFromObject("someClassName", someClass);
 
             Assert.IsNotNull(treeElement);
-            Assert.IsTrue(treeElement is OtherElement);
+            Assert.IsTrue(treeElement is SystemElement);
         }
 
         [TestMethod]

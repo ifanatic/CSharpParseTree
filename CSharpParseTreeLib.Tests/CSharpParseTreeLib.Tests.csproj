@@ -60,6 +60,7 @@
     <Compile Include="EnumerableElementTest.cs" />
     <Compile Include="SimpleElementTest.cs" />
     <Compile Include="SimpleVisitorTest.cs" />
+    <Compile Include="SomeTest.cs" />
     <Compile Include="Testdata\OtherNamespaceClass.cs" />
     <Compile Include="Testdata\MonoNamespaceClass.cs" />
     <Compile Include="TreeElementCreatorTest.cs" />
