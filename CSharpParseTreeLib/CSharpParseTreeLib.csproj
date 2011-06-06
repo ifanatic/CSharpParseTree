@@ -54,6 +54,7 @@
     <Compile Include="Interfaces.cs" />
     <Compile Include="MCSCompiler.cs" />
     <Compile Include="MCSOtherElement.cs" />
+    <Compile Include="MCSVisitorWrapper.cs" />
     <Compile Include="PlainTextVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionUtils.cs" />
@@ -63,12 +64,6 @@
     <Compile Include="SystemElement.cs" />
     <Compile Include="TreeElementCreator.cs" />
     <Compile Include="XMLFormatBuilder.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CSharpParseTree\CSharpParseTree.csproj">
-      <Project>{3ACF270B-E2BB-463D-B57C-87247ADBA60A}</Project>
-      <Name>CSharpParseTree</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

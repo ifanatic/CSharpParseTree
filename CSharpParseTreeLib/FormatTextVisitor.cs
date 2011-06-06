@@ -132,7 +132,7 @@ namespace CSharpParseTreeLib
 
             _builder.WriteSingleElement(element.TypeName,
                                         element.Name,
-                                        element.ValueObject.ToString());
+                                        value);
         }
     }
 }

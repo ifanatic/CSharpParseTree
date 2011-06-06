@@ -1,21 +1,17 @@
-using System;
+﻿using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SomeNamespace
+namespace CSharpParseTreeLib.Tests
 {
-	class SomeClass
-	{
-		public static void Main(string[] args)
-		{
-			int x = 10;	
-			if(x < 11)
-			{
-				while(true)
-				{
-					break;
-				}
-			}
-
-			Console.WriteLine("hello world!");
-		}
-	}
+    [TestClass]
+    public class DictionaryElementTest
+    {
+        [TestMethod]
+        public void TestMethod1()
+        {
+        }
+    }
 }

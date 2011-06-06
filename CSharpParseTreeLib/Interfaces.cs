@@ -36,6 +36,8 @@ namespace CSharpParseTreeLib
         void WriteSingleElement(string tag, string elementName, string value);
         void WriteStartDocument();
         void WriteEndDocument();
+        void WriteStartCustomElement(string tag, string attributeName, string value);
+        void WriteEndElement();
     }
 
     public interface IStringProcessor

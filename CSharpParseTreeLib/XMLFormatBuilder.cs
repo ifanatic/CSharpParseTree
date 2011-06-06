@@ -89,6 +89,22 @@ namespace CSharpParseTreeLib
         public void WriteEndDocument()
         {
             _xmlWriter.WriteEndDocument();
+
+            Close();
+        }
+
+        public void WriteStartCustomElement(string tag, string attributeName, string value)
+        {
+            _xmlWriter.WriteStartElement(tag);
+            if (attributeName != null)
+            {
+                _xmlWriter.WriteAttributeString(attributeName, value);
+            }
+        }
+
+        public void WriteEndElement()
+        {
+            _xmlWriter.WriteEndElement();
         }
     }
 }
