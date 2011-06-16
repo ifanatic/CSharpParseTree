@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectoryProject.cs" />
+    <Compile Include="AbstractProjectProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemovePathProcessor.cs" />
     <Compile Include="SourceCodeProject.cs" />

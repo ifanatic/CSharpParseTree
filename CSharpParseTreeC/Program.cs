@@ -122,7 +122,7 @@ namespace CSharpParseTreeC
                 return null;
             }
         }
-
+        
         static void Main(string[] args)
         {
             Args arguments = CreateArgs(args);
@@ -146,6 +146,8 @@ namespace CSharpParseTreeC
             Stream outputStream = null;
             IFormatBuilder formatter = null;
 
+            ProgressIndicator progressIndicator = new ProgressIndicator(10, 1);
+
             try
             {
                 outputStream = File.Open(arguments.OutputFile, FileMode.Create, FileAccess.Write);
@@ -164,8 +166,11 @@ namespace CSharpParseTreeC
                 StreamReportPrinter reporter = new StreamReportPrinter(Console.Out);
 
                 FormatTextProjectProcessor projectProcessor = new FormatTextProjectProcessor(reporter, formatter, processors);
+                projectProcessor.OnProgress += new ProgressHandler(progressIndicator.OnProgress);
 
                 Console.WriteLine("Начало обработки файлов");
+                Console.Write("Прогресс: ");
+                Console.SetCursorPosition(0, 2);
 
                 projectProcessor.Process(project);
 
@@ -189,7 +194,7 @@ namespace CSharpParseTreeC
                 }
             }
 
-            Console.WriteLine("Работа закончена");
+            Console.WriteLine("Обработка файлов завершена");
 
             Console.ReadLine();
         }

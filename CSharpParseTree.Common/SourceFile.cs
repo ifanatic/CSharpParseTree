@@ -10,6 +10,7 @@ namespace CSharpParseTree.Common
     {
         public string FileName { get; private set; }
         public string FileFullPath { get; private set; }
+        public string PathInProject { get; set; }
 
         public SourceFile(FileInfo fileInfo)
         {
@@ -20,6 +21,7 @@ namespace CSharpParseTree.Common
 
             FileName = fileInfo.Name;
             FileFullPath = fileInfo.FullName;
+            PathInProject = string.Empty;
         }
     }
 }

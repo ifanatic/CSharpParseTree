@@ -29,8 +29,14 @@ namespace CSharpParseTree.Common
 
             FilesCount = files.Length;
 
+            if(directoryFullPath[directoryFullPath.Length - 1] == Path.DirectorySeparatorChar)
+            {
+                directoryFullPath = directoryFullPath.Remove(directoryFullPath.Length - 1);
+            }
+
             _sourceFiles = from fi in files
-                           select new SourceFile(fi);
+                           select new SourceFile(fi) { PathInProject = 
+                               fi.FullName.Replace(directoryFullPath, "")};
         }
 
         public override IEnumerator<SourceFile> GetEnumerator()

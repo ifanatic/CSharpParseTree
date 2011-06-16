@@ -9,7 +9,7 @@ using CSharpParseTree.Common;
 
 namespace CSharpParseTreeC
 {
-    class FormatTextProjectProcessor : IProjectProcessor
+    class FormatTextProjectProcessor : AbstractProjectProcessor
     {
         private Mono.CSharp.ReportPrinter _reporter = null;
         private IFormatBuilder _formatter = null;
@@ -21,8 +21,8 @@ namespace CSharpParseTreeC
             _formatter = formatter;
             _processors = processors;
         }
-        
-        public void Process(SourceCodeProject project)
+
+        public override void Process(SourceCodeProject project)
         {
             MCSCompiler compiler = new MCSCompiler(Utils.GetDmcsAssemblyPath());
             if (!compiler.SuccessfulCreated)
@@ -33,6 +33,10 @@ namespace CSharpParseTreeC
             _formatter.WriteStartDocument();
             _formatter.WriteStartCustomElement("Project", "Name", project.Name);
 
+            int filesProcessed = 0;
+
+            DoProgress(0);
+
             foreach (SourceFile file in project)
             {
                 if (!compiler.Compile(file.FileFullPath, _reporter))
@@ -42,12 +46,16 @@ namespace CSharpParseTreeC
 
                 FormatTextVisitor visitor = new FormatTextVisitor(_formatter, _processors);
 
-                _formatter.WriteStartCustomElement("SourceFile", "Name", file.FileName);
+                _formatter.WriteStartCustomElement("SourceFile", "Name", file.PathInProject);
 
                 MCSClassElement root = new MCSClassElement("Root", compiler.TreeRoot);
                 root.Visit(visitor);
 
                 _formatter.WriteEndElement();
+
+                filesProcessed++;
+
+                DoProgress(filesProcessed * 100 / project.FilesCount);
             }
 
             _formatter.WriteEndElement();
