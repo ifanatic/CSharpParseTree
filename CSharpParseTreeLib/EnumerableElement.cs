@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CSharpParseTreeLib
+namespace CSharpParseTree.Library
 {
     public class EnumerableElement : BaseElement
     {

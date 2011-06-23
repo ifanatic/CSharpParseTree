@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTree", "CSharpParseTree\CSharpParseTree.csproj", "{3ACF270B-E2BB-463D-B57C-87247ADBA60A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTree.GUI", "CSharpParseTree\CSharpParseTree.GUI.csproj", "{3ACF270B-E2BB-463D-B57C-87247ADBA60A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTreeLib", "CSharpParseTreeLib\CSharpParseTreeLib.csproj", "{6ED0FAC8-AEF6-4000-A0B5-97FDBBBA62B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTree.Library", "CSharpParseTreeLib\CSharpParseTree.Library.csproj", "{6ED0FAC8-AEF6-4000-A0B5-97FDBBBA62B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{723FEBE5-9020-4BEC-8A53-968F20725F3F}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTreeLib.Tests", "CSharpParseTreeLib.Tests\CSharpParseTreeLib.Tests.csproj", "{BD1C17FF-3EB0-4165-8DB8-C9C14F6F8786}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTree.Library.Tests", "CSharpParseTreeLib.Tests\CSharpParseTree.Library.Tests.csproj", "{BD1C17FF-3EB0-4165-8DB8-C9C14F6F8786}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTree.Common", "CSharpParseTree.Common\CSharpParseTree.Common.csproj", "{D89AD1A7-A370-4B86-B87E-4C6C064B316B}"
 EndProject

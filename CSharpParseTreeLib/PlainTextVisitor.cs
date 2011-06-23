@@ -4,26 +4,28 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace CSharpParseTreeLib
+namespace CSharpParseTree.Library
 {
     public class PlainTextVisitor : IVisitor
     {
         private int depth = -1;
-        private FileStream _fileStream = null;
         private StreamWriter _writer = null;
         private Dictionary<object, bool> _visited = new Dictionary<object, bool>();
 
 
-        public PlainTextVisitor(string outputFileName)
+        public PlainTextVisitor(Stream outputStream)
         {
-            _fileStream = new FileStream(outputFileName, FileMode.Create, FileAccess.Write);
-            _writer = new StreamWriter(_fileStream);
+            _writer = new StreamWriter(outputStream);
+        }
+
+        public PlainTextVisitor(StreamWriter writer)
+        {
+            _writer = writer;
         }
 
         public void Close()
         {
             _writer.Close();
-            _fileStream.Close();
         }
 
         public void VisitMCSClassElement(MCSClassElement element)

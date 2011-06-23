@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Xml;
 
-namespace CSharpParseTreeLib
+namespace CSharpParseTree.Library
 {
     public class XMLFormatBuilder : IFormatBuilder
     {
@@ -65,7 +65,7 @@ namespace CSharpParseTreeLib
         public void WriteStartMCSClass(string tag, string name)
         {
             _xmlWriter.WriteStartElement(GetPreparedTag(tag));
-            _xmlWriter.WriteAttributeString("Name", name);
+            _xmlWriter.WriteElementString("Name", name);
         }
 
         public void WriteEndMCSClass(string tag)
@@ -76,8 +76,8 @@ namespace CSharpParseTreeLib
         public void WriteSingleElement(string tag, string elementName, string value)
         {
             _xmlWriter.WriteStartElement(GetPreparedTag(tag));
-            _xmlWriter.WriteAttributeString("Name", elementName);
-            _xmlWriter.WriteAttributeString("Value", value);
+            _xmlWriter.WriteElementString("Name", elementName);
+            _xmlWriter.WriteElementString("Value", value);
             _xmlWriter.WriteEndElement();
         }
 
@@ -98,7 +98,7 @@ namespace CSharpParseTreeLib
             _xmlWriter.WriteStartElement(tag);
             if (attributeName != null)
             {
-                _xmlWriter.WriteAttributeString(attributeName, value);
+                _xmlWriter.WriteElementString(attributeName, value);
             }
         }
 

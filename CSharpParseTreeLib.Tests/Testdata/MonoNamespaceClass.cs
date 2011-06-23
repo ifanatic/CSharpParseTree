@@ -24,5 +24,31 @@ namespace Mono
             public string bStringValue = "string_Val1";
             protected ClassA cClassAValue = new ClassA();
         }
+
+        class ClassC
+        {
+            private int _value = 10;
+
+            public void SetValue(int value) { _value = value; }
+        }
+
+        class ClassD
+        {
+            private int _value = 10;
+
+            public void SetValue(int value) { _value = value; }
+
+            public override string  ToString()
+            {
+                return _value.ToString();
+            }
+        }
+
+        class ClassE
+        {
+            private ClassC _classC = new ClassC();
+
+            public void SetValue(int value) { _classC.SetValue(value); }
+        }
     }
 }

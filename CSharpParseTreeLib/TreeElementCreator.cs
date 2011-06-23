@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CSharpParseTreeLib
+namespace CSharpParseTree.Library
 {
     public class TreeElementCreator
     {
@@ -27,12 +27,10 @@ namespace CSharpParseTreeLib
                 return false;
             }
 
-            /*if (objectType.Namespace.StartsWith("System.") &&
-                !objectType.Namespace.StartsWith("System.Collections") &&
-                (objectType.Namespace.Length > 7))
+            if (objectType.Name.Equals("TypeBuilder") || objectType.Name.Equals("GenericTypeBuilder"))
             {
                 return false;
-            }*/
+            }
 
             if (name.Equals("TypeBuilder") || name.Equals("GenericTypeBuilder"))
             {

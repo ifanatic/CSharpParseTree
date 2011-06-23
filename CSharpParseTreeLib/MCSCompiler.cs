@@ -6,7 +6,7 @@ using System.IO;
 using Mono.CSharp;
 using System.Reflection;
 
-namespace CSharpParseTreeLib
+namespace CSharpParseTree.Library
 {
     public class ClassDriverNotFoundException : ApplicationException
     {
@@ -19,7 +19,7 @@ namespace CSharpParseTreeLib
         private Assembly _dmcsAssembly = null;
         Type _driverType = null;
         ModuleContainer _treeRoot = null;
-
+        ReportPrinter _reporter = new EmptyReportPrinter();
 
         public ModuleContainer TreeRoot
         {
@@ -40,12 +40,15 @@ namespace CSharpParseTreeLib
                 | BindingFlags.NonPublic | BindingFlags.Static, null, rootContext, null);
         }
 
-        public MCSCompiler(string assemblyFileName)
+        public MCSCompiler(string assemblyFileName, ReportPrinter reporter)
         {
+            // Загружаем сборку компилятора
             _dmcsAssembly = Assembly.LoadFile(assemblyFileName);
 
+            // Пробуем получить тип драйвера компиляции
             _driverType = ReflectionUtils.ExtractTypeByName(_dmcsAssembly, "Mono.CSharp.Driver");
 
+            // Если не удалось
             if (_driverType == null)
             {
                 SuccessfulCreated = false;
@@ -54,28 +57,27 @@ namespace CSharpParseTreeLib
             }
 
             SuccessfulCreated = true;
+
+            _reporter = reporter;
         }
 
         public bool Compile(string fileName)
-        {
-            EmptyReportPrinter report = new EmptyReportPrinter();
-           
-            return Compile(fileName, report);
-        }
-
-        public bool Compile(string fileName, ReportPrinter reportPrinter)
         {
             if (_driverType == null)
             {
                 throw new ClassDriverNotFoundException();
             }
 
+            // Сбрасываем внутреннее состояние компилятора
             CompilerCallableEntryPoint.Reset();
 
+            // Формируем параметры командной строки
+            // Первый - это имя файла, второй - что необходимо выполнить только разбор
             string[] args = new string[] { fileName, "--parse" };
 
-            object[] oargs = new object[] { args, false, reportPrinter };
+            object[] oargs = new object[] { args, false, _reporter };
 
+            // Создаем объект драйвера
             object driver = _driverType.InvokeMember("Create", BindingFlags.Static | BindingFlags.Public | BindingFlags.InvokeMethod,
                 null, null, oargs);
 
@@ -84,14 +86,17 @@ namespace CSharpParseTreeLib
                 throw new ClassDriverNotFoundException("Не могу создать объект драйвера компиляции");
             }
 
+            // И компилируем
             bool result = (bool)_driverType.InvokeMember("Compile", BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.IgnoreCase
                 | BindingFlags.Instance, null, driver, null);
-            if (!result || (reportPrinter.ErrorsCount > 0))
+
+            if (!result || (_reporter.ErrorsCount > 0))
             {
                 _treeRoot = null;
                 return false;
             }
 
+            // Достаем дерево разбора
             ExtractTreeRoot();
 
             return true;

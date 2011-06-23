@@ -50,9 +50,9 @@
     <Compile Include="SourceFile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSharpParseTreeLib\CSharpParseTreeLib.csproj">
+    <ProjectReference Include="..\CSharpParseTreeLib\CSharpParseTree.Library.csproj">
       <Project>{6ED0FAC8-AEF6-4000-A0B5-97FDBBBA62B1}</Project>
-      <Name>CSharpParseTreeLib</Name>
+      <Name>CSharpParseTree.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,9 +3,9 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSharpParseTreeLib;
+using CSharpParseTree.Library;
 
-namespace CSharpParseTreeLib.Tests
+namespace CSharpParseTree.Library.Tests
 {
     [TestClass]
     public class EnumerableElementTest

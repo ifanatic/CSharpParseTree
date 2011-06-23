@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-using CSharpParseTreeLib;
+using CSharpParseTree.Library;
 using CSharpParseTree.Common;
 
 namespace CSharpParseTreeC
@@ -24,7 +24,7 @@ namespace CSharpParseTreeC
 
         public override void Process(SourceCodeProject project)
         {
-            MCSCompiler compiler = new MCSCompiler(Utils.GetDmcsAssemblyPath());
+            MCSCompiler compiler = new MCSCompiler(Utils.GetDmcsAssemblyPath(), _reporter);
             if (!compiler.SuccessfulCreated)
             {
                 return;
@@ -39,7 +39,7 @@ namespace CSharpParseTreeC
 
             foreach (SourceFile file in project)
             {
-                if (!compiler.Compile(file.FileFullPath, _reporter))
+                if (!compiler.Compile(file.FileFullPath))
                 {
                     continue;
                 }

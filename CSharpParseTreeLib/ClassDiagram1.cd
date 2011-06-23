@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CSharpParseTreeLib.BadElementTypeException" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>BadElementTypeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.BaseElement" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJAAAAAAAAAQAAAAAAAQAAAAAQBAAAAAAAACAAEA=</HashCode>
+      <FileName>BaseElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.DictionaryElement" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DictionaryElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.EmptyReportPrinter" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>EmptyReportPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.EnumerableElement" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumerableElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.FormatTextVisitor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAABAAEgAIAAAAAQACAAAAAAAEAAAAAAAABCAg=</HashCode>
+      <FileName>FormatTextVisitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.JSONFormatBuilder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAEAAAAABAAAAABEABGAAAIAABQQAAAAAAAAQCAAIA=</HashCode>
+      <FileName>JSONFormatBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.MCSClassElement" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MCSClassElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.ClassDriverNotFoundException" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MCSCompiler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.MCSCompiler" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAEAAABCAAAgAAAAAAIAACAAAAAAAEA=</HashCode>
+      <FileName>MCSCompiler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.MCSElementVisitor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAQAgAIAACAIAABAAAAAAAEAAAAgAAAAAAg=</HashCode>
+      <FileName>MCSElementVisitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.MCSOtherElement" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MCSOtherElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.MCSVisitorWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAABAAEgAIAAAAAAABAAAAAAAEAAAAAAAAAAAg=</HashCode>
+      <FileName>MCSVisitorWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.PlainTextVisitor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAEgAIAAAAAAAAAAAAAAAEAAAAAIAGAAIg=</HashCode>
+      <FileName>PlainTextVisitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.ReflectionUtils" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>ReflectionUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.StreamReportPrinter" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAEAAA=</HashCode>
+      <FileName>StreamReportPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.SystemElement" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SystemElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.TreeElementCreator" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>TreeElementCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpParseTreeLib.XMLFormatBuilder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAEAAAAABAAAAABEABGAAAIAABAQAAAAAAAAQCAAIA=</HashCode>
+      <FileName>XMLFormatBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CSharpParseTreeLib.DbC.Helper" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>DbCHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CSharpParseTreeLib.IVisitor">
+    <Position X="12.25" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAIAAAAAAAAAAAAAAAEAAAAAAAAAAAg=</HashCode>
+      <FileName>Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CSharpParseTreeLib.ITreeElement" Collapsed="true">
+    <Position X="17.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAQAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CSharpParseTreeLib.ICompiler">
+    <Position X="19.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CSharpParseTreeLib.IFormatBuilder">
+    <Position X="9.75" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAEAAAAABAAAAABEAAGAAAIAABAQAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CSharpParseTreeLib.IStringProcessor" Collapsed="true">
+    <Position X="15.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

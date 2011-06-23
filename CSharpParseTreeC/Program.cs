@@ -7,7 +7,7 @@ using System.Reflection;
 
 using CSharpParseTree;
 using CSharpParseTree.Common;
-using CSharpParseTreeLib;
+using CSharpParseTree.Library;
 
 namespace CSharpParseTreeC
 {
@@ -111,7 +111,8 @@ namespace CSharpParseTreeC
             }
             else if (type.Equals("json", StringComparison.CurrentCultureIgnoreCase))
             {
-                throw new NotImplementedException("Поддержка JSON пока не реализована");
+                throw new NotImplementedException("Поддержка Json пока не реализована");
+                //return new JSONFormatBuilder(stream);
             }
             else if (type.Equals("plain", StringComparison.CurrentCultureIgnoreCase))
             {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-using CSharpParseTreeLib;
+using CSharpParseTree.Library;
 
 namespace CSharpParseTree
 {
@@ -35,8 +35,8 @@ namespace CSharpParseTree
 
                  TextBoxReportPrinter reportPrinter = new TextBoxReportPrinter(tbCompileReport);
 
-                 MCSCompiler compiler = new MCSCompiler(Path.Combine(appPath, "dmcs.exe"));
-                 if (!compiler.Compile(fileName, reportPrinter))
+                 MCSCompiler compiler = new MCSCompiler(Path.Combine(appPath, "dmcs.exe"), reportPrinter);
+                 if (!compiler.Compile(fileName))
                  {
                      return;
                  }

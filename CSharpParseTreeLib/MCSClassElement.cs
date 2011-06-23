@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace CSharpParseTreeLib
+namespace CSharpParseTree.Library
 {
     public class MCSClassElement : BaseElement
     {

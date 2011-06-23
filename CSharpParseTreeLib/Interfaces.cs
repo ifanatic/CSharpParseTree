@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CSharpParseTreeLib
+namespace CSharpParseTree.Library
 {
     public interface IVisitor
     {
@@ -22,7 +22,6 @@ namespace CSharpParseTreeLib
     public interface ICompiler
     {
         bool Compile(string fileName);
-        bool Compile(string fileName, Mono.CSharp.ReportPrinter reportPrinter);
     }
 
     public interface IFormatBuilder

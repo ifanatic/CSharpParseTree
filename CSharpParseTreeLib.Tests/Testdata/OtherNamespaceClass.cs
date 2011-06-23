@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CSharpParseTreeLib.Tests.Testdata
+namespace CSharpParseTree.Library.Tests.Testdata
 {
     class ClassA
     {
