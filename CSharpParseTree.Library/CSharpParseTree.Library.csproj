@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D89AD1A7-A370-4B86-B87E-4C6C064B316B}</ProjectGuid>
+    <ProjectGuid>{6ED0FAC8-AEF6-4000-A0B5-97FDBBBA62B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSharpParseTree.Common</RootNamespace>
-    <AssemblyName>CSharpParseTree.Common</AssemblyName>
+    <RootNamespace>CSharpParseTree.Library</RootNamespace>
+    <AssemblyName>CSharpParseTreeLib</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,8 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="dmcs">
-      <HintPath>..\References\Core\dmcs.exe</HintPath>
+    <Reference Include="dmcs, Version=2.8.1.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\..\..\..\Temp\dmcs.exe</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net35">
+      <HintPath>..\References\Core\Newtonsoft.Json.Net35.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,18 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DirectoryProject.cs" />
-    <Compile Include="AbstractProjectProcessor.cs" />
+    <Compile Include="BadElementTypeException.cs" />
+    <Compile Include="BaseElement.cs" />
+    <Compile Include="DictionaryElement.cs" />
+    <Compile Include="DbCHelper.cs" />
+    <Compile Include="EmptyReportPrinter.cs" />
+    <Compile Include="EnumerableElement.cs" />
+    <Compile Include="FormatTextVisitor.cs" />
+    <Compile Include="Interfaces.cs" />
+    <Compile Include="MCSCompiler.cs" />
+    <Compile Include="MCSOtherElement.cs" />
+    <Compile Include="PlainTextVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemovePathProcessor.cs" />
-    <Compile Include="SourceCodeProject.cs" />
-    <Compile Include="SourceFile.cs" />
+    <Compile Include="ReflectionUtils.cs" />
+    <Compile Include="MCSClassElement.cs" />
+    <Compile Include="MCSElementVisitor.cs" />
+    <Compile Include="StreamReportPrinter.cs" />
+    <Compile Include="SystemElement.cs" />
+    <Compile Include="TreeElementCreator.cs" />
+    <Compile Include="XMLFormatBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSharpParseTree.Library\CSharpParseTree.Library.csproj">
-      <Project>{6ED0FAC8-AEF6-4000-A0B5-97FDBBBA62B1}</Project>
-      <Name>CSharpParseTree.Library</Name>
-    </ProjectReference>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
