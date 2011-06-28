@@ -14,7 +14,7 @@ namespace CSharpParseTree.Library
   
     public interface ITreeElement
     {
-        IEnumerable<ITreeElement> GetChildrens();
+        IEnumerable<ITreeElement> GetChilds();
         void Visit(IVisitor visitor);
         String Name { get;}
     }

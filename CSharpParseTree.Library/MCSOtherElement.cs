@@ -10,7 +10,7 @@ namespace CSharpParseTree.Library
         public MCSOtherElement(string name, object value)
             : base(name, value) { }
 
-        public override IEnumerable<ITreeElement> GetChildrens()
+        public override IEnumerable<ITreeElement> GetChilds()
         {
             return null;
         }

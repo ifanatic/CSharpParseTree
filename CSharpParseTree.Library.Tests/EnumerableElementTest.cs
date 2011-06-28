@@ -45,7 +45,7 @@ namespace CSharpParseTree.Library.Tests
         public void TestGetChildrensCount()
         {
             EnumerableElement enumElement = new EnumerableElement("name", someList);
-            IEnumerable<ITreeElement> childrens = enumElement.GetChildrens();
+            IEnumerable<ITreeElement> childrens = enumElement.GetChilds();
 
             Assert.AreEqual(4, childrens.Count());
         }
@@ -54,7 +54,7 @@ namespace CSharpParseTree.Library.Tests
         public void TestGetChildensElements()
         {
             EnumerableElement enumElement = new EnumerableElement("name", someList);
-            IEnumerable<ITreeElement> childrens = enumElement.GetChildrens();
+            IEnumerable<ITreeElement> childrens = enumElement.GetChilds();
 
             Assert.AreEqual((childrens.First() as BaseElement).ValueObject, 10);
             Assert.IsTrue(childrens.Last() is MCSClassElement);

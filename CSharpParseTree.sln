@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTreeG", "CSharpParseTree\CSharpParseTreeG.csproj", "{3ACF270B-E2BB-463D-B57C-87247ADBA60A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpParseTree", "CSharpParseTree\CSharpParseTree.csproj", "{3ACF270B-E2BB-463D-B57C-87247ADBA60A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{723FEBE5-9020-4BEC-8A53-968F20725F3F}"
 	ProjectSection(SolutionItems) = preProject

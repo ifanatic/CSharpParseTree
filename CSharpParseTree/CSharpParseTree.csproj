@@ -83,9 +83,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSharpParseTreeLib\CSharpParseTreeLib.csproj">
+    <ProjectReference Include="..\CSharpParseTree.Common\CSharpParseTree.Common.csproj">
+      <Project>{D89AD1A7-A370-4B86-B87E-4C6C064B316B}</Project>
+      <Name>CSharpParseTree.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSharpParseTree.Library\CSharpParseTree.Library.csproj">
       <Project>{6ED0FAC8-AEF6-4000-A0B5-97FDBBBA62B1}</Project>
-      <Name>CSharpParseTreeLib</Name>
+      <Name>CSharpParseTree.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

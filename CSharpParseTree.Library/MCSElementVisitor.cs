@@ -16,7 +16,7 @@ namespace CSharpParseTree.Library
         public void VisitMCSClassElement(MCSClassElement element)
         {
             MCSCLassElementsCount += 1;
-            IEnumerable<ITreeElement> childrens = element.GetChildrens();
+            IEnumerable<ITreeElement> childrens = element.GetChilds();
 
             foreach (var child in childrens)
             {
@@ -27,7 +27,7 @@ namespace CSharpParseTree.Library
         public void VisitEnumerableElement(EnumerableElement element)
         {
             EnumerableElementsCount += 1;
-            IEnumerable<ITreeElement> childrens = element.GetChildrens();
+            IEnumerable<ITreeElement> childrens = element.GetChilds();
 
             foreach (var child in childrens)
             {
@@ -38,7 +38,7 @@ namespace CSharpParseTree.Library
         public void VisitDictionaryElement(DictionaryElement element)
         {
             DictionaryElementsCount += 1;
-            IEnumerable<ITreeElement> childrens = element.GetChildrens();
+            IEnumerable<ITreeElement> childrens = element.GetChilds();
 
             foreach (var child in childrens)
             {

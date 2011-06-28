@@ -46,7 +46,7 @@ namespace CSharpParseTree.Library
             _visited.Add(element.ValueObject, true);
 
             depth++;
-            IEnumerable<ITreeElement> childrens = element.GetChildrens();
+            IEnumerable<ITreeElement> childrens = element.GetChilds();
 
             for (int i = 0; i < depth; ++i)
             {
@@ -73,7 +73,7 @@ namespace CSharpParseTree.Library
             _visited.Add(element.ValueObject, true);
 
             depth++;
-            IEnumerable<ITreeElement> childrens = element.GetChildrens();
+            IEnumerable<ITreeElement> childrens = element.GetChilds();
 
             for (int i = 0; i < depth; ++i)
             {
@@ -98,7 +98,7 @@ namespace CSharpParseTree.Library
             _visited.Add(element.ValueObject, true);
 
             depth++;
-            IEnumerable<ITreeElement> childrens = element.GetChildrens();
+            IEnumerable<ITreeElement> childrens = element.GetChilds();
 
             for (int i = 0; i < depth; ++i)
             {

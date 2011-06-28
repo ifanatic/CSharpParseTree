@@ -35,7 +35,7 @@ namespace CSharpParseTree.Library
         private void ExtractTreeRoot()
         {
             RootContext rootContext = new RootContext();
-            Type rootContextType = rootContext.GetType()/*ReflectionUtils.ExtractTypeByName(_dmcsAssembly, "Mono.CSharp.RootContext")*/;
+            Type rootContextType = rootContext.GetType();
             _treeRoot = (ModuleContainer)rootContextType.InvokeMember("root", BindingFlags.GetField | BindingFlags.Instance
                 | BindingFlags.NonPublic | BindingFlags.Static, null, rootContext, null);
         }

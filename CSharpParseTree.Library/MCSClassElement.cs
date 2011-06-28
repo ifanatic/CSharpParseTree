@@ -14,7 +14,7 @@ namespace CSharpParseTree.Library
 
         }
 
-        public override IEnumerable<ITreeElement> GetChildrens()
+        public override IEnumerable<ITreeElement> GetChilds()
         {
             List<Type> baseTypes = new List<Type>();
             Type typeInfo = ValueObject.GetType();

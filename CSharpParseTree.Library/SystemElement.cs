@@ -12,7 +12,7 @@ namespace CSharpParseTree.Library
         {
         }
 
-        public override IEnumerable<ITreeElement> GetChildrens()
+        public override IEnumerable<ITreeElement> GetChilds()
         {
             return null;
         }

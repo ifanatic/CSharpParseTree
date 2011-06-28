@@ -17,7 +17,9 @@ namespace CSharpParseTree.Library
             }
         }
 
-        public override IEnumerable<ITreeElement> GetChildrens()
+        // EnumerableElement.cs
+
+        public override IEnumerable<ITreeElement> GetChilds()
         {
             IEnumerable collection = ValueObject as IEnumerable;
             ITreeElement newElement = null;

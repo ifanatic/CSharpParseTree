@@ -46,7 +46,7 @@ namespace CSharpParseTree.Library
 
         private void VisitChildrens(ITreeElement element)
         {
-            IEnumerable<ITreeElement> childrens = element.GetChildrens();
+            IEnumerable<ITreeElement> childrens = element.GetChilds();
 
             foreach (var children in childrens)
             {

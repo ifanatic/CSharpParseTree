@@ -45,7 +45,7 @@ namespace CSharpParseTree.Library.Tests
 
             DictionaryElement elem = new DictionaryElement("some_name", dict);
 
-            Assert.AreEqual(2, elem.GetChildrens().Count());
+            Assert.AreEqual(2, elem.GetChilds().Count());
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace CSharpParseTree.Library.Tests
 
             DictionaryElement elem = new DictionaryElement("dict", dict);
 
-            IEnumerable<ITreeElement> childs = elem.GetChildrens();
+            IEnumerable<ITreeElement> childs = elem.GetChilds();
 
             Assert.AreEqual("ads", childs.ElementAt(0).Name);
             Assert.AreEqual("1", childs.Last().Name);

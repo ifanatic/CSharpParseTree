@@ -37,7 +37,7 @@ namespace CSharpParseTree.Library
             }
         }
 
-        public virtual IEnumerable<ITreeElement> GetChildrens()
+        public virtual IEnumerable<ITreeElement> GetChilds()
         {
             throw new NotImplementedException();
         }

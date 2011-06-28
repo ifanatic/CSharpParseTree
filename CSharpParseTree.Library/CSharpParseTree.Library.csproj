@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CSharpParseTree.Library</RootNamespace>
-    <AssemblyName>CSharpParseTreeLib</AssemblyName>
+    <AssemblyName>CSharpParseTree.Library</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
